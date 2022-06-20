@@ -19,8 +19,19 @@ void action_reset_recording(void){
     Keyboard.release(KEY_LEFT_CTRL);
 }
 
+void action_new_track_record(void){
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press('y');
+    Keyboard.release('y');
+    Keyboard.release(KEY_LEFT_CTRL);
+    Keyboard.release(KEY_LEFT_SHIFT);
+
+}
+
 void action_pause(void){
     Keyboard.press(' ');
+    Keyboard.release(' ');
 }
 
 tButton b1;
@@ -44,8 +55,8 @@ void setup() {
 
 void loop() {
     button_check(&b1, NULL, &action_reset_recording);
-    button_check(&b2, NULL, &action_reset_recording);
-    button_check(&b3, NULL, &action_reset_recording);
-    // button_check(&b2, &action_pause, NULL);
+    button_check(&b2, NULL, &action_pause);
+    button_check(&b3, NULL, &action_new_track_record);
+
     delay(10);
 }
