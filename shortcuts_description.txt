@@ -1,0 +1,3 @@
+Track: Insert new track 			- Ctrl Shift y
+Track: Toggle record arm for selected tracks 	- Ctrl Shift r
+Transport: Play/pause 				- Space
